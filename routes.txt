@@ -1,0 +1,312 @@
+Nr   Verb    Uri                                                                         Return     Description
+1    DELETE  /V1/addresses/{addressId}                                                   boolean    Delete customer address by ID.
+2    GET     /V1/attributeMetadata/customer                                              array      Get all attribute metadata.
+3    GET     /V1/attributeMetadata/customer/attribute/{attributeCode}                    mixed      Retrieve attribute metadata.
+4    GET     /V1/attributeMetadata/customer/custom                                       array      Get custom attributes metadata for the given data interface.
+5    GET     /V1/attributeMetadata/customer/form/{formCode}                              array      Retrieve all attributes filtered by form code.
+6    GET     /V1/attributeMetadata/customerAddress                                       array      Get all attribute metadata.
+7    GET     /V1/attributeMetadata/customerAddress/attribute/{attributeCode}             mixed      Retrieve attribute metadata.
+8    GET     /V1/attributeMetadata/customerAddress/custom                                array      Get custom attributes metadata for the given data interface.
+9    GET     /V1/attributeMetadata/customerAddress/form/{formCode}                       array      Retrieve all attributes filtered by form code.
+10   POST    /V1/bundle-products/options/add                                             integer    Add new option for bundle product.
+11   GET     /V1/bundle-products/options/types                                           array      Get all types for options for bundle products.
+12   PUT     /V1/bundle-products/options/{optionId}                                      integer    Add new option for bundle product.
+13   GET     /V1/bundle-products/{productSku}/children                                   array      Get all children for Bundle product.
+14   PUT     /V1/bundle-products/{sku}/links/{id}                                        boolean    No description yet.
+15   POST    /V1/bundle-products/{sku}/links/{optionId}                                  integer    Add child product to specified Bundle option by product sku.
+16   GET     /V1/bundle-products/{sku}/options/all                                       array      Get all options for bundle product.
+17   GET     /V1/bundle-products/{sku}/options/{optionId}                                mixed      Get option for bundle product.
+18   DELETE  /V1/bundle-products/{sku}/options/{optionId}                                boolean    Remove bundle option.
+19   DELETE  /V1/bundle-products/{sku}/options/{optionId}/children/{childSku}            boolean    Remove product from Bundle product option.
+20   POST    /V1/carts/                                                                  integer    Creates an empty cart and quote for a guest.
+21   GET     /V1/carts/licence                                                           array      Lists active checkout agreements.
+22   POST    /V1/carts/mine                                                              integer    Creates an empty cart and quote for a specified customer.
+23   GET     /V1/carts/mine                                                              mixed      Returns information for the cart for a specified customer.
+24   GET     /V1/carts/mine/billing-address                                              mixed      Returns the billing address for a specified quote.
+25   POST    /V1/carts/mine/billing-address                                              integer    Assigns a specified billing address to a specified cart.
+26   PUT     /V1/carts/mine/collect-totals                                               mixed      Set shipping/billing methods and additional data for cart and collect totals.
+27   GET     /V1/carts/mine/coupons                                                      string     Returns information for a coupon in a specified cart.
+28   DELETE  /V1/carts/mine/coupons                                                      boolean    Deletes a coupon from a specified cart.
+29   PUT     /V1/carts/mine/coupons/{couponCode}                                         boolean    Adds a coupon by code to a specified cart.
+30   POST    /V1/carts/mine/estimate-shipping-methods                                    array      Estimate shipping.
+31   POST    /V1/carts/mine/estimate-shipping-methods-by-address-id                      array      Estimate shipping.
+32   GET     /V1/carts/mine/gift-message                                                 mixed      Return the gift message for a specified order.
+33   POST    /V1/carts/mine/gift-message                                                 boolean    Set the gift message for an entire order.
+34   GET     /V1/carts/mine/gift-message/{itemId}                                        mixed      Return the gift message for a specified item in a specified shopping cart.
+35   POST    /V1/carts/mine/gift-message/{itemId}                                        boolean    Set the gift message for a specified item in a specified shopping cart.
+36   GET     /V1/carts/mine/items                                                        array      Lists items that are assigned to a specified cart.
+37   POST    /V1/carts/mine/items                                                        mixed      Adds the specified item to the specified cart.
+38   PUT     /V1/carts/mine/items/{itemId}                                               mixed      Adds the specified item to the specified cart.
+39   DELETE  /V1/carts/mine/items/{itemId}                                               boolean    Removes the specified item from the specified cart.
+40   PUT     /V1/carts/mine/order                                                        integer    Places an order for a specified cart.
+41   POST    /V1/carts/mine/payment-information                                          integer    Set payment information and place order for a specified cart.
+42   GET     /V1/carts/mine/payment-information                                          mixed      Get payment information.
+43   GET     /V1/carts/mine/payment-methods                                              array      Lists available payment methods for a specified shopping cart.
+44   GET     /V1/carts/mine/selected-payment-method                                      mixed      Returns the payment method for a specified shopping cart.
+45   PUT     /V1/carts/mine/selected-payment-method                                      string     Adds a specified payment method to a specified shopping cart.
+46   POST    /V1/carts/mine/set-payment-information                                      integer    Set payment information for a specified cart.
+47   POST    /V1/carts/mine/shipping-information                                         mixed      No description yet.
+48   GET     /V1/carts/mine/shipping-methods                                             array      Lists applicable shipping methods for a specified quote.
+49   GET     /V1/carts/mine/totals                                                       mixed      Returns quote totals data for a specified cart.
+50   POST    /V1/carts/mine/totals-information                                           mixed      Calculate quote totals based on address and shipping method.
+51   GET     /V1/carts/search                                                            mixed      Enables administrative users to list carts that match specified search criteria.
+52   GET     /V1/carts/{cartId}                                                          mixed      Enables an administrative user to return information for a specified cart.
+53   PUT     /V1/carts/{cartId}                                                          boolean    Assigns a specified customer to a specified shopping cart.
+54   GET     /V1/carts/{cartId}/billing-address                                          mixed      Returns the billing address for a specified quote.
+55   POST    /V1/carts/{cartId}/billing-address                                          integer    Assigns a specified billing address to a specified cart.
+56   GET     /V1/carts/{cartId}/coupons                                                  string     Returns information for a coupon in a specified cart.
+57   DELETE  /V1/carts/{cartId}/coupons                                                  boolean    Deletes a coupon from a specified cart.
+58   PUT     /V1/carts/{cartId}/coupons/{couponCode}                                     boolean    Adds a coupon by code to a specified cart.
+59   GET     /V1/carts/{cartId}/gift-message                                             mixed      Return the gift message for a specified order.
+60   POST    /V1/carts/{cartId}/gift-message                                             boolean    Set the gift message for an entire order.
+61   GET     /V1/carts/{cartId}/gift-message/{itemId}                                    mixed      Return the gift message for a specified item in a specified shopping cart.
+62   POST    /V1/carts/{cartId}/gift-message/{itemId}                                    boolean    Set the gift message for a specified item in a specified shopping cart.
+63   GET     /V1/carts/{cartId}/items                                                    array      Lists items that are assigned to a specified cart.
+64   POST    /V1/carts/{cartId}/items                                                    mixed      Adds the specified item to the specified cart.
+65   PUT     /V1/carts/{cartId}/items/{itemId}                                           mixed      Adds the specified item to the specified cart.
+66   DELETE  /V1/carts/{cartId}/items/{itemId}                                           boolean    Removes the specified item from the specified cart.
+67   PUT     /V1/carts/{cartId}/order                                                    integer    Places an order for a specified cart.
+68   GET     /V1/carts/{cartId}/payment-methods                                          array      Lists available payment methods for a specified shopping cart.
+69   GET     /V1/carts/{cartId}/selected-payment-method                                  mixed      Returns the payment method for a specified shopping cart.
+70   PUT     /V1/carts/{cartId}/selected-payment-method                                  string     Adds a specified payment method to a specified shopping cart.
+71   POST    /V1/carts/{cartId}/shipping-information                                     mixed      No description yet.
+72   GET     /V1/carts/{cartId}/shipping-methods                                         array      Lists applicable shipping methods for a specified quote.
+73   GET     /V1/carts/{cartId}/totals                                                   mixed      Returns quote totals data for a specified cart.
+74   POST    /V1/carts/{cartId}/totals-information                                       mixed      Calculate quote totals based on address and shipping method.
+75   POST    /V1/categories                                                              mixed      Create category service.
+76   GET     /V1/categories                                                              mixed      Retrieve list of categories.
+77   GET     /V1/categories/attributes                                                   mixed      Retrieve all attributes for entity type.
+78   GET     /V1/categories/attributes/{attributeCode}                                   mixed      Retrieve specific attribute.
+79   GET     /V1/categories/attributes/{attributeCode}/options                           array      Retrieve list of attribute options.
+80   DELETE  /V1/categories/{categoryId}                                                 boolean    Delete category by identifier.
+81   GET     /V1/categories/{categoryId}                                                 mixed      Get info about category by category id.
+82   PUT     /V1/categories/{categoryId}/move                                            boolean    Move category.
+83   GET     /V1/categories/{categoryId}/products                                        array      Get products assigned to category.
+84   POST    /V1/categories/{categoryId}/products                                        boolean    Assign a product to the required category.
+85   PUT     /V1/categories/{categoryId}/products                                        boolean    Assign a product to the required category.
+86   DELETE  /V1/categories/{categoryId}/products/{sku}                                  boolean    Remove the product assignment from the category by category id and sku.
+87   PUT     /V1/categories/{id}                                                         mixed      Create category service.
+88   POST    /V1/cmsBlock                                                                mixed      Save block.
+89   GET     /V1/cmsBlock/search                                                         mixed      Retrieve blocks matching the specified criteria.
+90   GET     /V1/cmsBlock/{blockId}                                                      mixed      Retrieve block.
+91   DELETE  /V1/cmsBlock/{blockId}                                                      boolean    Delete block by ID.
+92   PUT     /V1/cmsBlock/{id}                                                           mixed      Update block.
+93   POST    /V1/cmsPage                                                                 mixed      Save page.
+94   GET     /V1/cmsPage/search                                                          mixed      Retrieve pages matching the specified criteria.
+95   PUT     /V1/cmsPage/{id}                                                            mixed      Update page.
+96   GET     /V1/cmsPage/{pageId}                                                        mixed      Retrieve page.
+97   DELETE  /V1/cmsPage/{pageId}                                                        boolean    Delete page by ID.
+98   PUT     /V1/configurable-products/variation                                         array      Generate variation based on same product.
+99   POST    /V1/configurable-products/{sku}/child                                       boolean    No description yet.
+100  GET     /V1/configurable-products/{sku}/children                                    array      Get all children for Bundle product.
+101  DELETE  /V1/configurable-products/{sku}/children/{childSku}                         boolean    Remove configurable product option.
+102  POST    /V1/configurable-products/{sku}/options                                     integer    Save option.
+103  GET     /V1/configurable-products/{sku}/options/all                                 array      Get all options for configurable product.
+104  GET     /V1/configurable-products/{sku}/options/{id}                                mixed      Get option for configurable product.
+105  PUT     /V1/configurable-products/{sku}/options/{id}                                integer    Update option.
+106  DELETE  /V1/configurable-products/{sku}/options/{id}                                boolean    Remove option from configurable product.
+107  POST    /V1/coupons                                                                 mixed      Save coupon.
+108  POST    /V1/coupons/deleteByCodes                                                   mixed      Delete coupon by coupon codes.
+109  POST    /V1/coupons/deleteByIds                                                     mixed      Delete coupon by coupon ids.
+110  POST    /V1/coupons/generate                                                        array      Generate coupon for a rule.
+111  GET     /V1/coupons/search                                                          mixed      Retrieve coupon.
+112  GET     /V1/coupons/{couponId}                                                      mixed      Get coupon by coupon id.
+113  PUT     /V1/coupons/{couponId}                                                      mixed      Update coupon.
+114  DELETE  /V1/coupons/{couponId}                                                      boolean    Delete coupon by coupon id.
+115  POST    /V1/creditmemo                                                              mixed      Performs persist operations for a specified credit memo.
+116  PUT     /V1/creditmemo/{id}                                                         boolean    Cancels a specified credit memo.
+117  GET     /V1/creditmemo/{id}                                                         mixed      Loads a specified credit memo.
+118  GET     /V1/creditmemo/{id}/comments                                                mixed      Lists comments for a specified credit memo.
+119  POST    /V1/creditmemo/{id}/comments                                                mixed      Performs persist operations for a specified entity.
+120  POST    /V1/creditmemo/{id}/emails                                                  boolean    Emails a user a specified credit memo.
+121  GET     /V1/creditmemos                                                             mixed      Lists credit memos that match specified search criteria.
+122  POST    /V1/customerGroups                                                          mixed      Save customer group.
+123  GET     /V1/customerGroups/default                                                  mixed      Get default customer group.
+124  GET     /V1/customerGroups/default/{storeId}                                        mixed      Get default customer group.
+125  GET     /V1/customerGroups/search                                                   mixed      Retrieve customer groups. The list of groups can be filtered to exclude the NOT_LOGGED_IN group using the first parameter and/or it can be filtered by tax class.
+126  GET     /V1/customerGroups/{id}                                                     mixed      Get customer group by group ID.
+127  PUT     /V1/customerGroups/{id}                                                     mixed      Update customer group.
+128  DELETE  /V1/customerGroups/{id}                                                     boolean    Delete customer group by ID.
+129  GET     /V1/customerGroups/{id}/permissions                                         boolean    Check if customer group can be deleted.
+130  POST    /V1/customers                                                               mixed      Create customer account. Perform necessary business operations like sending email.
+131  GET     /V1/customers/addresses/{addressId}                                         mixed      Retrieve customer address.
+132  POST    /V1/customers/confirm                                                       boolean    Resend confirmation email.
+133  POST    /V1/customers/isEmailAvailable                                              boolean    Check if given email is associated with a customer account in given website.
+134  PUT     /V1/customers/me                                                            mixed      Create customer.
+135  GET     /V1/customers/me                                                            mixed      Retrieve customer.
+136  PUT     /V1/customers/me/activate                                                   mixed      Activate a customer account using a key that was sent in a confirmation email.
+137  GET     /V1/customers/me/billingAddress                                             mixed      Retrieve default billing address for the given customerId.
+138  PUT     /V1/customers/me/password                                                   boolean    Change customer password.
+139  GET     /V1/customers/me/shippingAddress                                            mixed      Retrieve default shipping address for the given customerId.
+140  PUT     /V1/customers/password                                                      boolean    Send an email to the customer with a password reset link.
+141  GET     /V1/customers/search                                                        mixed      Retrieve customers which match a specified criteria.
+142  PUT     /V1/customers/validate                                                      mixed      Validate customer data.
+143  GET     /V1/customers/{customerId}                                                  mixed      Retrieve customer.
+144  DELETE  /V1/customers/{customerId}                                                  boolean    Delete customer by ID.
+145  GET     /V1/customers/{customerId}/billingAddress                                   mixed      Retrieve default billing address for the given customerId.
+146  POST    /V1/customers/{customerId}/carts                                            integer    Creates an empty cart and quote for a specified customer.
+147  GET     /V1/customers/{customerId}/confirm                                          string     Gets the account confirmation status.
+148  GET     /V1/customers/{customerId}/password/resetLinkToken/{resetPasswordLinkToken} boolean    Check if password reset token is valid.
+149  GET     /V1/customers/{customerId}/permissions/readonly                             boolean    Check if customer can be deleted.
+150  GET     /V1/customers/{customerId}/shippingAddress                                  mixed      Retrieve default shipping address for the given customerId.
+151  PUT     /V1/customers/{email}/activate                                              mixed      Activate a customer account using a key that was sent in a confirmation email.
+152  PUT     /V1/customers/{id}                                                          mixed      Create customer.
+153  GET     /V1/directory/countries                                                     array      Get all countries and regions information for the store.
+154  GET     /V1/directory/countries/{countryId}                                         mixed      Get country and region information for the store.
+155  GET     /V1/directory/currency                                                      mixed      Get currency information for the store.
+156  POST    /V1/eav/attribute-sets                                                      mixed      Create attribute set from data.
+157  GET     /V1/eav/attribute-sets/list                                                 mixed      Retrieve list of Attribute Sets.
+158  GET     /V1/eav/attribute-sets/{attributeSetId}                                     mixed      Retrieve attribute set information based on given ID.
+159  DELETE  /V1/eav/attribute-sets/{attributeSetId}                                     boolean    Remove attribute set by given ID.
+160  PUT     /V1/eav/attribute-sets/{attributeSetId}                                     mixed      Update attribute set data.
+161  POST    /V1/guest-carts                                                             string     Enable an customer or guest user to create an empty cart and quote for an anonymous customer.
+162  GET     /V1/guest-carts/{cartId}                                                    mixed      Enable a guest user to return information for a specified cart.
+163  PUT     /V1/guest-carts/{cartId}                                                    boolean    Assign a specified customer to a specified shopping cart.
+164  GET     /V1/guest-carts/{cartId}/billing-address                                    mixed      Return the billing address for a specified quote.
+165  POST    /V1/guest-carts/{cartId}/billing-address                                    integer    Assign a specified billing address to a specified cart.
+166  PUT     /V1/guest-carts/{cartId}/collect-totals                                     mixed      Set shipping/billing methods and additional data for cart and collect totals for guest.
+167  GET     /V1/guest-carts/{cartId}/coupons                                            string     Return information for a coupon in a specified cart.
+168  DELETE  /V1/guest-carts/{cartId}/coupons                                            boolean    Delete a coupon from a specified cart.
+169  PUT     /V1/guest-carts/{cartId}/coupons/{couponCode}                               boolean    Add a coupon by code to a specified cart.
+170  POST    /V1/guest-carts/{cartId}/estimate-shipping-methods                          array      Estimate shipping.
+171  GET     /V1/guest-carts/{cartId}/gift-message                                       mixed      Return the gift message for a specified order.
+172  POST    /V1/guest-carts/{cartId}/gift-message                                       boolean    Set the gift message for an entire order.
+173  GET     /V1/guest-carts/{cartId}/gift-message/{itemId}                              mixed      Return the gift message for a specified item in a specified shopping cart.
+174  POST    /V1/guest-carts/{cartId}/gift-message/{itemId}                              boolean    Set the gift message for a specified item in a specified shopping cart.
+175  GET     /V1/guest-carts/{cartId}/items                                              array      List items that are assigned to a specified cart.
+176  POST    /V1/guest-carts/{cartId}/items                                              mixed      Add the specified item to the specified cart.
+177  PUT     /V1/guest-carts/{cartId}/items/{itemId}                                     mixed      Add the specified item to the specified cart.
+178  DELETE  /V1/guest-carts/{cartId}/items/{itemId}                                     boolean    Remove the specified item from the specified cart.
+179  PUT     /V1/guest-carts/{cartId}/order                                              integer    Place an order for a specified cart.
+180  POST    /V1/guest-carts/{cartId}/payment-information                                integer    Set payment information and place order for a specified cart.
+181  GET     /V1/guest-carts/{cartId}/payment-information                                mixed      Get payment information.
+182  GET     /V1/guest-carts/{cartId}/payment-methods                                    array      List available payment methods for a specified shopping cart.
+183  GET     /V1/guest-carts/{cartId}/selected-payment-method                            mixed      Return the payment method for a specified shopping cart.
+184  PUT     /V1/guest-carts/{cartId}/selected-payment-method                            integer    Add a specified payment method to a specified shopping cart.
+185  POST    /V1/guest-carts/{cartId}/set-payment-information                            integer    Set payment information for a specified cart.
+186  POST    /V1/guest-carts/{cartId}/shipping-information                               mixed      No description yet.
+187  GET     /V1/guest-carts/{cartId}/shipping-methods                                   array      List applicable shipping methods for a specified quote.
+188  GET     /V1/guest-carts/{cartId}/totals                                             mixed      Return quote totals data for a specified cart.
+189  POST    /V1/guest-carts/{cartId}/totals-information                                 mixed      Calculate quote totals based on address and shipping method.
+190  POST    /V1/integration/admin/token                                                 string     Create access token for admin given the admin credentials.
+191  POST    /V1/integration/customer/token                                              string     Create access token for admin given the customer credentials.
+192  GET     /V1/invoices                                                                mixed      Lists invoices that match specified search criteria.
+193  POST    /V1/invoices/                                                               mixed      Performs persist operations for a specified invoice.
+194  POST    /V1/invoices/comments                                                       mixed      Performs persist operations for a specified invoice comment.
+195  GET     /V1/invoices/{id}                                                           mixed      Loads a specified invoice.
+196  POST    /V1/invoices/{id}/capture                                                   string     Sets invoice capture.
+197  GET     /V1/invoices/{id}/comments                                                  mixed      Lists comments for a specified invoice.
+198  POST    /V1/invoices/{id}/emails                                                    boolean    Emails a user a specified invoice.
+199  POST    /V1/invoices/{id}/void                                                      boolean    Voids a specified invoice.
+200  GET     /V1/modules                                                                 array      Returns an array of enabled modules.
+201  GET     /V1/orders                                                                  mixed      Lists orders that match specified search criteria.
+202  GET     /V1/orders/items                                                            mixed      Lists order items that match specified search criteria.
+203  GET     /V1/orders/items/{id}                                                       mixed      Loads a specified order item.
+204  GET     /V1/orders/{id}                                                             mixed      Loads a specified order.
+205  POST    /V1/orders/{id}/cancel                                                      boolean    Cancels a specified order.
+206  POST    /V1/orders/{id}/comments                                                    boolean    Adds a comment to a specified order.
+207  GET     /V1/orders/{id}/comments                                                    mixed      Lists comments for a specified order.
+208  POST    /V1/orders/{id}/emails                                                      boolean    Emails a user a specified order.
+209  POST    /V1/orders/{id}/hold                                                        boolean    Holds a specified order.
+210  GET     /V1/orders/{id}/statuses                                                    string     Gets the status for a specified order.
+211  POST    /V1/orders/{id}/unhold                                                      boolean    Releases a specified order from hold status.
+212  PUT     /V1/orders/{parent_id}                                                      mixed      Performs persist operations for a specified order address.
+213  POST    /V1/products                                                                mixed      Create product.
+214  GET     /V1/products                                                                mixed      Get product list.
+215  POST    /V1/products/attribute-sets                                                 mixed      Create attribute set from data.
+216  POST    /V1/products/attribute-sets/attributes                                      integer    Assign attribute to attribute set.
+217  POST    /V1/products/attribute-sets/groups                                          mixed      Save attribute group.
+218  GET     /V1/products/attribute-sets/groups/list                                     mixed      Retrieve list of attribute groups.
+219  DELETE  /V1/products/attribute-sets/groups/{groupId}                                boolean    Remove attribute group by id.
+220  GET     /V1/products/attribute-sets/sets/list                                       mixed      Retrieve list of Attribute Sets.
+221  GET     /V1/products/attribute-sets/{attributeSetId}                                mixed      Retrieve attribute set information based on given ID.
+222  DELETE  /V1/products/attribute-sets/{attributeSetId}                                boolean    Remove attribute set by given ID.
+223  PUT     /V1/products/attribute-sets/{attributeSetId}                                mixed      Update attribute set data.
+224  GET     /V1/products/attribute-sets/{attributeSetId}/attributes                     array      Retrieve related attributes based on given attribute set ID.
+225  DELETE  /V1/products/attribute-sets/{attributeSetId}/attributes/{attributeCode}     boolean    Remove attribute from attribute set.
+226  PUT     /V1/products/attribute-sets/{attributeSetId}/groups                         mixed      Update attribute group.
+227  GET     /V1/products/attributes                                                     mixed      Retrieve all attributes for entity type.
+228  POST    /V1/products/attributes                                                     mixed      Save attribute data.
+229  GET     /V1/products/attributes/types                                               array      Retrieve list of product attribute types.
+230  GET     /V1/products/attributes/{attributeCode}                                     mixed      Retrieve specific attribute.
+231  PUT     /V1/products/attributes/{attributeCode}                                     mixed      Update attribute data.
+232  DELETE  /V1/products/attributes/{attributeCode}                                     boolean    Delete Attribute by id.
+233  GET     /V1/products/attributes/{attributeCode}/options                             array      Retrieve list of attribute options.
+234  POST    /V1/products/attributes/{attributeCode}/options                             boolean    Add option to attribute.
+235  DELETE  /V1/products/attributes/{attributeCode}/options/{optionId}                  boolean    Delete option from attribute.
+236  DELETE  /V1/products/downloadable-links/samples/{id}                                boolean    Delete downloadable sample.
+237  DELETE  /V1/products/downloadable-links/{id}                                        boolean    Delete downloadable link.
+238  GET     /V1/products/links/types                                                    array      Retrieve information about available product link types.
+239  GET     /V1/products/links/{type}/attributes                                        array      Provide a list of the product link type attributes.
+240  GET     /V1/products/media/types/{attributeSetName}                                 array      Retrieve the list of media attributes (fronted input type is media_image) assigned to the given attribute set.
+241  POST    /V1/products/options                                                        mixed      Save custom option.
+242  GET     /V1/products/options/types                                                  array      Get custom option types.
+243  PUT     /V1/products/options/{optionId}                                             mixed      Update custom option.
+244  GET     /V1/products/types                                                          array      Retrieve available product types.
+245  PUT     /V1/products/{productSku}/stockItems/{itemId}                               integer    No description yet.
+246  PUT     /V1/products/{sku}                                                          mixed      Create product.
+247  DELETE  /V1/products/{sku}                                                          boolean    No description yet.
+248  GET     /V1/products/{sku}                                                          mixed      Get info about product by product SKU.
+249  GET     /V1/products/{sku}/downloadable-links                                       array      List of links with associated samples.
+250  POST    /V1/products/{sku}/downloadable-links                                       integer    Update downloadable link of the given product (link type and its resources cannot be changed).
+251  GET     /V1/products/{sku}/downloadable-links/samples                               array      List of samples for downloadable product.
+252  POST    /V1/products/{sku}/downloadable-links/samples                               integer    Update downloadable sample of the given product.
+253  PUT     /V1/products/{sku}/downloadable-links/samples/{id}                          integer    Update downloadable sample of the given product.
+254  PUT     /V1/products/{sku}/downloadable-links/{id}                                  integer    Update downloadable link of the given product (link type and its resources cannot be changed).
+255  GET     /V1/products/{sku}/group-prices/{customerGroupId}/tiers                     array      Get tier price of product.
+256  DELETE  /V1/products/{sku}/group-prices/{customerGroupId}/tiers/{qty}               boolean    Remove tier price from product.
+257  POST    /V1/products/{sku}/group-prices/{customerGroupId}/tiers/{qty}/price/{price} boolean    Create tier price for product.
+258  POST    /V1/products/{sku}/links                                                    boolean    Assign a product link to another product.
+259  PUT     /V1/products/{sku}/links                                                    boolean    Update product link.
+260  GET     /V1/products/{sku}/links/{type}                                             array      Provide the list of links for a specific product.
+261  DELETE  /V1/products/{sku}/links/{type}/{linkedProductSku}                          boolean    No description yet.
+262  POST    /V1/products/{sku}/media                                                    integer    Create new gallery entry.
+263  GET     /V1/products/{sku}/media                                                    array      Retrieve the list of gallery entries associated with given product.
+264  GET     /V1/products/{sku}/media/{entryId}                                          mixed      Return information about gallery entry.
+265  PUT     /V1/products/{sku}/media/{entryId}                                          boolean    Update gallery entry.
+266  DELETE  /V1/products/{sku}/media/{entryId}                                          boolean    Remove gallery entry.
+267  GET     /V1/products/{sku}/options                                                  array      Get the list of custom options for a specific product.
+268  GET     /V1/products/{sku}/options/{optionId}                                       mixed      Get custom option for a specific product.
+269  DELETE  /V1/products/{sku}/options/{optionId}                                       boolean    No description yet.
+270  POST    /V1/products/{sku}/websites                                                 boolean    Assign a product to the website.
+271  PUT     /V1/products/{sku}/websites                                                 boolean    Assign a product to the website.
+272  DELETE  /V1/products/{sku}/websites/{websiteId}                                     boolean    Remove the website assignment from the product by product sku.
+273  POST    /V1/salesRules                                                              mixed      Save sales rule.
+274  GET     /V1/salesRules/search                                                       mixed      Retrieve sales rules.
+275  GET     /V1/salesRules/{ruleId}                                                     mixed      Get rule by ID.
+276  PUT     /V1/salesRules/{ruleId}                                                     mixed      Update sales rule.
+277  DELETE  /V1/salesRules/{ruleId}                                                     boolean    Delete rule by ID.
+278  GET     /V1/search                                                                  mixed      Make Full Text Search and return found Documents.
+279  POST    /V1/shipment/                                                               mixed      Performs persist operations for a specified shipment.
+280  POST    /V1/shipment/track                                                          mixed      Performs persist operations for a specified shipment track.
+281  DELETE  /V1/shipment/track/{id}                                                     boolean    Deletes a specified shipment track by ID.
+282  GET     /V1/shipment/{id}                                                           mixed      Loads a specified shipment.
+283  GET     /V1/shipment/{id}/comments                                                  mixed      Lists comments for a specified shipment.
+284  POST    /V1/shipment/{id}/comments                                                  mixed      Performs persist operations for a specified shipment comment.
+285  POST    /V1/shipment/{id}/emails                                                    boolean    Emails user a specified shipment.
+286  GET     /V1/shipment/{id}/label                                                     string     Gets a specified shipment label.
+287  GET     /V1/shipments                                                               mixed      Lists shipments that match specified search criteria.
+288  GET     /V1/stockItems/lowStock/                                                    mixed      Retrieves a list of SKU's with low inventory qty.
+289  GET     /V1/stockItems/{productSku}                                                 mixed      No description yet.
+290  GET     /V1/stockStatuses/{productSku}                                              mixed      No description yet.
+291  GET     /V1/store/storeConfigs                                                      array      No description yet.
+292  GET     /V1/store/storeGroups                                                       array      Retrieve list of all groups.
+293  GET     /V1/store/storeViews                                                        array      Retrieve list of all stores.
+294  GET     /V1/store/websites                                                          array      Retrieve list of all websites.
+295  POST    /V1/taxClasses                                                              string     Create a Tax Class.
+296  GET     /V1/taxClasses/search                                                       mixed      Retrieve tax classes which match a specific criteria.
+297  PUT     /V1/taxClasses/{classId}                                                    string     Create a Tax Class.
+298  GET     /V1/taxClasses/{taxClassId}                                                 mixed      Get a tax class with the given tax class id.
+299  DELETE  /V1/taxClasses/{taxClassId}                                                 boolean    Delete a tax class with the given tax class id.
+300  POST    /V1/taxRates                                                                mixed      Create or update tax rate.
+301  PUT     /V1/taxRates                                                                mixed      Create or update tax rate.
+302  GET     /V1/taxRates/search                                                         mixed      Search TaxRates.
+303  GET     /V1/taxRates/{rateId}                                                       mixed      Get tax rate.
+304  DELETE  /V1/taxRates/{rateId}                                                       boolean    Delete tax rate.
+305  POST    /V1/taxRules                                                                mixed      Save TaxRule.
+306  PUT     /V1/taxRules                                                                mixed      Update TaxRule.
+307  GET     /V1/taxRules/search                                                         mixed      Search TaxRules.
+308  DELETE  /V1/taxRules/{ruleId}                                                       boolean    Delete TaxRule.
+309  GET     /V1/taxRules/{ruleId}                                                       mixed      Get TaxRule.
+310  GET     /V1/transactions                                                            mixed      Lists transactions that match specified search criteria.
+311  GET     /V1/transactions/{id}                                                       mixed      Loads a specified transaction.
