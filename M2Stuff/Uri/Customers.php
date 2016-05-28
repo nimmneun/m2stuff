@@ -5,6 +5,17 @@ namespace M2Stuff\Uri;
 class Customers
 {
     /**
+     * Uri to: Retrieve customer.
+     * 
+     * @param  int    $customerId
+     * @return string
+     */
+    public function getByCustomerId($customerId)
+    {
+        return "/V1/customers/{$customerId}";
+    }
+
+    /**
      * Uri to: Delete customer by ID.
      * 
      * @param  int    $customerId
@@ -24,6 +35,16 @@ class Customers
     public function putById($id)
     {
         return "/V1/customers/{$id}";
+    }
+
+    /**
+     * Uri to: Create customer.
+     * 
+     * @return string
+     */
+    public function putMe()
+    {
+        return "/V1/customers/me";
     }
 
     /**

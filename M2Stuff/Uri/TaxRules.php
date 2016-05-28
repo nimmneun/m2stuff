@@ -5,6 +5,16 @@ namespace M2Stuff\Uri;
 class TaxRules
 {
     /**
+     * Uri to: Save TaxRule.
+     * 
+     * @return string
+     */
+    public function post()
+    {
+        return "/V1/taxRules";
+    }
+
+    /**
      * Uri to: Update TaxRule.
      * 
      * @return string
@@ -12,6 +22,17 @@ class TaxRules
     public function put()
     {
         return "/V1/taxRules";
+    }
+
+    /**
+     * Uri to: Delete TaxRule.
+     * 
+     * @param  int    $ruleId
+     * @return string
+     */
+    public function deleteByRuleId($ruleId)
+    {
+        return "/V1/taxRules/{$ruleId}";
     }
 
     /**

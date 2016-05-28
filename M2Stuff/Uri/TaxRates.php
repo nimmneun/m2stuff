@@ -9,9 +9,30 @@ class TaxRates
      * 
      * @return string
      */
+    public function post()
+    {
+        return "/V1/taxRates";
+    }
+
+    /**
+     * Uri to: Create or update tax rate.
+     * 
+     * @return string
+     */
     public function put()
     {
         return "/V1/taxRates";
+    }
+
+    /**
+     * Uri to: Get tax rate.
+     * 
+     * @param  int    $rateId
+     * @return string
+     */
+    public function getByRateId($rateId)
+    {
+        return "/V1/taxRates/{$rateId}";
     }
 
     /**

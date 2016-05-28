@@ -5,6 +5,17 @@ namespace M2Stuff\Uri;
 class GuestCarts
 {
     /**
+     * Uri to: Enable a guest user to return information for a specified cart.
+     * 
+     * @param  int    $cartId
+     * @return string
+     */
+    public function getByCartId($cartId)
+    {
+        return "/V1/guest-carts/{$cartId}";
+    }
+
+    /**
      * Uri to: Assign a specified customer to a specified shopping cart.
      * 
      * @param  int    $cartId
@@ -59,6 +70,17 @@ class GuestCarts
     }
 
     /**
+     * Uri to: List items that are assigned to a specified cart.
+     * 
+     * @param  int    $cartId
+     * @return string
+     */
+    public function getItemsByCartId($cartId)
+    {
+        return "/V1/guest-carts/{$cartId}/items";
+    }
+
+    /**
      * Uri to: Add the specified item to the specified cart.
      * 
      * @param  int    $cartId
@@ -67,6 +89,18 @@ class GuestCarts
     public function postItemsByCartId($cartId)
     {
         return "/V1/guest-carts/{$cartId}/items";
+    }
+
+    /**
+     * Uri to: Add the specified item to the specified cart.
+     * 
+     * @param  int    $cartId
+     * @param  int    $itemId
+     * @return string
+     */
+    public function putItemsByCartIdAndItemId($cartId, $itemId)
+    {
+        return "/V1/guest-carts/{$cartId}/items/{$itemId}";
     }
 
     /**
@@ -79,6 +113,17 @@ class GuestCarts
     public function deleteItemsByCartIdAndItemId($cartId, $itemId)
     {
         return "/V1/guest-carts/{$cartId}/items/{$itemId}";
+    }
+
+    /**
+     * Uri to: Return the payment method for a specified shopping cart.
+     * 
+     * @param  int    $cartId
+     * @return string
+     */
+    public function getSelectedPaymentMethodByCartId($cartId)
+    {
+        return "/V1/guest-carts/{$cartId}/selected-payment-method";
     }
 
     /**
@@ -104,6 +149,17 @@ class GuestCarts
     }
 
     /**
+     * Uri to: Return the billing address for a specified quote.
+     * 
+     * @param  int    $cartId
+     * @return string
+     */
+    public function getBillingAddressByCartId($cartId)
+    {
+        return "/V1/guest-carts/{$cartId}/billing-address";
+    }
+
+    /**
      * Uri to: Assign a specified billing address to a specified cart.
      * 
      * @param  int    $cartId
@@ -112,6 +168,17 @@ class GuestCarts
     public function postBillingAddressByCartId($cartId)
     {
         return "/V1/guest-carts/{$cartId}/billing-address";
+    }
+
+    /**
+     * Uri to: Return information for a coupon in a specified cart.
+     * 
+     * @param  int    $cartId
+     * @return string
+     */
+    public function getCouponsByCartId($cartId)
+    {
+        return "/V1/guest-carts/{$cartId}/coupons";
     }
 
     /**
@@ -182,6 +249,17 @@ class GuestCarts
     }
 
     /**
+     * Uri to: Set payment information and place order for a specified cart.
+     * 
+     * @param  int    $cartId
+     * @return string
+     */
+    public function postPaymentInformationByCartId($cartId)
+    {
+        return "/V1/guest-carts/{$cartId}/payment-information";
+    }
+
+    /**
      * Uri to: Get payment information.
      * 
      * @param  int    $cartId
@@ -204,6 +282,17 @@ class GuestCarts
     }
 
     /**
+     * Uri to: Return the gift message for a specified order.
+     * 
+     * @param  int    $cartId
+     * @return string
+     */
+    public function getGiftMessageByCartId($cartId)
+    {
+        return "/V1/guest-carts/{$cartId}/gift-message";
+    }
+
+    /**
      * Uri to: Set the gift message for an entire order.
      * 
      * @param  int    $cartId
@@ -212,6 +301,18 @@ class GuestCarts
     public function postGiftMessageByCartId($cartId)
     {
         return "/V1/guest-carts/{$cartId}/gift-message";
+    }
+
+    /**
+     * Uri to: Return the gift message for a specified item in a specified shopping cart.
+     * 
+     * @param  int    $cartId
+     * @param  int    $itemId
+     * @return string
+     */
+    public function getGiftMessageByCartIdAndItemId($cartId, $itemId)
+    {
+        return "/V1/guest-carts/{$cartId}/gift-message/{$itemId}";
     }
 
     /**

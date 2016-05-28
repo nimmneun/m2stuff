@@ -5,6 +5,17 @@ namespace M2Stuff\Uri;
 class CmsBlock
 {
     /**
+     * Uri to: Retrieve block.
+     * 
+     * @param  int    $blockId
+     * @return string
+     */
+    public function getByBlockId($blockId)
+    {
+        return "/V1/cmsBlock/{$blockId}";
+    }
+
+    /**
      * Uri to: Delete block by ID.
      * 
      * @param  int    $blockId

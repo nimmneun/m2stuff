@@ -15,6 +15,17 @@ class TaxClasses
     }
 
     /**
+     * Uri to: Get a tax class with the given tax class id.
+     * 
+     * @param  int    $taxClassId
+     * @return string
+     */
+    public function getByTaxClassId($taxClassId)
+    {
+        return "/V1/taxClasses/{$taxClassId}";
+    }
+
+    /**
      * Uri to: Delete a tax class with the given tax class id.
      * 
      * @param  int    $taxClassId

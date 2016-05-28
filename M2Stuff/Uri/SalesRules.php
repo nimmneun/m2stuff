@@ -5,6 +5,28 @@ namespace M2Stuff\Uri;
 class SalesRules
 {
     /**
+     * Uri to: Get rule by ID.
+     * 
+     * @param  int    $ruleId
+     * @return string
+     */
+    public function getByRuleId($ruleId)
+    {
+        return "/V1/salesRules/{$ruleId}";
+    }
+
+    /**
+     * Uri to: Update sales rule.
+     * 
+     * @param  int    $ruleId
+     * @return string
+     */
+    public function putByRuleId($ruleId)
+    {
+        return "/V1/salesRules/{$ruleId}";
+    }
+
+    /**
      * Uri to: Delete rule by ID.
      * 
      * @param  int    $ruleId

@@ -5,6 +5,16 @@ namespace M2Stuff\Uri;
 class Products
 {
     /**
+     * Uri to: Create product.
+     * 
+     * @return string
+     */
+    public function post()
+    {
+        return "/V1/products";
+    }
+
+    /**
      * Uri to: Get product list.
      * 
      * @return string
@@ -12,6 +22,28 @@ class Products
     public function get()
     {
         return "/V1/products";
+    }
+
+    /**
+     * Uri to: Create product.
+     * 
+     * @param  string $sku
+     * @return string
+     */
+    public function putBySku($sku)
+    {
+        return "/V1/products/{$sku}";
+    }
+
+    /**
+     * Uri to: No description yet.
+     * 
+     * @param  string $sku
+     * @return string
+     */
+    public function deleteBySku($sku)
+    {
+        return "/V1/products/{$sku}";
     }
 
     /**
@@ -36,6 +68,28 @@ class Products
     }
 
     /**
+     * Uri to: Retrieve specific attribute.
+     * 
+     * @param  string $attributeCode
+     * @return string
+     */
+    public function getAttributesByAttributeCode($attributeCode)
+    {
+        return "/V1/products/attributes/{$attributeCode}";
+    }
+
+    /**
+     * Uri to: Update attribute data.
+     * 
+     * @param  string $attributeCode
+     * @return string
+     */
+    public function putAttributesByAttributeCode($attributeCode)
+    {
+        return "/V1/products/attributes/{$attributeCode}";
+    }
+
+    /**
      * Uri to: Delete Attribute by id.
      * 
      * @param  string $attributeCode
@@ -44,6 +98,16 @@ class Products
     public function deleteAttributesByAttributeCode($attributeCode)
     {
         return "/V1/products/attributes/{$attributeCode}";
+    }
+
+    /**
+     * Uri to: Retrieve all attributes for entity type.
+     * 
+     * @return string
+     */
+    public function getAttributes()
+    {
+        return "/V1/products/attributes";
     }
 
     /**
@@ -74,6 +138,28 @@ class Products
     public function getAttributeSetsSetsList()
     {
         return "/V1/products/attribute-sets/sets/list";
+    }
+
+    /**
+     * Uri to: Retrieve attribute set information based on given ID.
+     * 
+     * @param  int    $attributeSetId
+     * @return string
+     */
+    public function getAttributeSetsByAttributeSetId($attributeSetId)
+    {
+        return "/V1/products/attribute-sets/{$attributeSetId}";
+    }
+
+    /**
+     * Uri to: Remove attribute set by given ID.
+     * 
+     * @param  int    $attributeSetId
+     * @return string
+     */
+    public function deleteAttributeSetsByAttributeSetId($attributeSetId)
+    {
+        return "/V1/products/attribute-sets/{$attributeSetId}";
     }
 
     /**
@@ -173,6 +259,17 @@ class Products
     }
 
     /**
+     * Uri to: Retrieve list of attribute options.
+     * 
+     * @param  string $attributeCode
+     * @return string
+     */
+    public function getAttributesOptionsByAttributeCode($attributeCode)
+    {
+        return "/V1/products/attributes/{$attributeCode}/options";
+    }
+
+    /**
      * Uri to: Add option to attribute.
      * 
      * @param  string $attributeCode
@@ -207,6 +304,30 @@ class Products
     }
 
     /**
+     * Uri to: Return information about gallery entry.
+     * 
+     * @param  string $sku
+     * @param  int    $entryId
+     * @return string
+     */
+    public function getMediaBySkuAndEntryId($sku, $entryId)
+    {
+        return "/V1/products/{$sku}/media/{$entryId}";
+    }
+
+    /**
+     * Uri to: Update gallery entry.
+     * 
+     * @param  string $sku
+     * @param  int    $entryId
+     * @return string
+     */
+    public function putMediaBySkuAndEntryId($sku, $entryId)
+    {
+        return "/V1/products/{$sku}/media/{$entryId}";
+    }
+
+    /**
      * Uri to: Remove gallery entry.
      * 
      * @param  string $sku
@@ -216,6 +337,17 @@ class Products
     public function deleteMediaBySkuAndEntryId($sku, $entryId)
     {
         return "/V1/products/{$sku}/media/{$entryId}";
+    }
+
+    /**
+     * Uri to: Create new gallery entry.
+     * 
+     * @param  string $sku
+     * @return string
+     */
+    public function postMediaBySku($sku)
+    {
+        return "/V1/products/{$sku}/media";
     }
 
     /**
@@ -290,6 +422,18 @@ class Products
     }
 
     /**
+     * Uri to: Get custom option for a specific product.
+     * 
+     * @param  string $sku
+     * @param  int    $optionId
+     * @return string
+     */
+    public function getOptionsBySkuAndOptionId($sku, $optionId)
+    {
+        return "/V1/products/{$sku}/options/{$optionId}";
+    }
+
+    /**
      * Uri to: No description yet.
      * 
      * @param  string $sku
@@ -356,6 +500,17 @@ class Products
     }
 
     /**
+     * Uri to: Assign a product link to another product.
+     * 
+     * @param  string $sku
+     * @return string
+     */
+    public function postLinksBySku($sku)
+    {
+        return "/V1/products/{$sku}/links";
+    }
+
+    /**
      * Uri to: Update product link.
      * 
      * @param  string $sku
@@ -385,6 +540,17 @@ class Products
      * @param  string $sku
      * @return string
      */
+    public function postWebsitesBySku($sku)
+    {
+        return "/V1/products/{$sku}/websites";
+    }
+
+    /**
+     * Uri to: Assign a product to the website.
+     * 
+     * @param  string $sku
+     * @return string
+     */
     public function putWebsitesBySku($sku)
     {
         return "/V1/products/{$sku}/websites";
@@ -400,6 +566,17 @@ class Products
     public function deleteWebsitesBySkuAndWebsiteId($sku, $websiteId)
     {
         return "/V1/products/{$sku}/websites/{$websiteId}";
+    }
+
+    /**
+     * Uri to: List of links with associated samples.
+     * 
+     * @param  string $sku
+     * @return string
+     */
+    public function getDownloadableLinksBySku($sku)
+    {
+        return "/V1/products/{$sku}/downloadable-links";
     }
 
     /**
@@ -434,6 +611,17 @@ class Products
     public function deleteDownloadableLinksById($id)
     {
         return "/V1/products/downloadable-links/{$id}";
+    }
+
+    /**
+     * Uri to: List of samples for downloadable product.
+     * 
+     * @param  string $sku
+     * @return string
+     */
+    public function getDownloadableLinksSamplesBySku($sku)
+    {
+        return "/V1/products/{$sku}/downloadable-links/samples";
     }
 
     /**

@@ -37,6 +37,17 @@ class Categories
     }
 
     /**
+     * Uri to: Delete category by identifier.
+     * 
+     * @param  int    $categoryId
+     * @return string
+     */
+    public function deleteByCategoryId($categoryId)
+    {
+        return "/V1/categories/{$categoryId}";
+    }
+
+    /**
      * Uri to: Get info about category by category id.
      * 
      * @param  int    $categoryId
@@ -45,6 +56,16 @@ class Categories
     public function getByCategoryId($categoryId)
     {
         return "/V1/categories/{$categoryId}";
+    }
+
+    /**
+     * Uri to: Create category service.
+     * 
+     * @return string
+     */
+    public function post()
+    {
+        return "/V1/categories";
     }
 
     /**
@@ -77,6 +98,28 @@ class Categories
     public function putMoveByCategoryId($categoryId)
     {
         return "/V1/categories/{$categoryId}/move";
+    }
+
+    /**
+     * Uri to: Get products assigned to category.
+     * 
+     * @param  int    $categoryId
+     * @return string
+     */
+    public function getProductsByCategoryId($categoryId)
+    {
+        return "/V1/categories/{$categoryId}/products";
+    }
+
+    /**
+     * Uri to: Assign a product to the required category.
+     * 
+     * @param  int    $categoryId
+     * @return string
+     */
+    public function postProductsByCategoryId($categoryId)
+    {
+        return "/V1/categories/{$categoryId}/products";
     }
 
     /**

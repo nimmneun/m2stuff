@@ -26,6 +26,17 @@ class Shipment
     }
 
     /**
+     * Uri to: Lists comments for a specified shipment.
+     * 
+     * @param  int    $id
+     * @return string
+     */
+    public function getCommentsById($id)
+    {
+        return "/V1/shipment/{$id}/comments";
+    }
+
+    /**
      * Uri to: Performs persist operations for a specified shipment comment.
      * 
      * @param  int    $id

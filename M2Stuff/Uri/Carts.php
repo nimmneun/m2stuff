@@ -5,6 +5,17 @@ namespace M2Stuff\Uri;
 class Carts
 {
     /**
+     * Uri to: Enables an administrative user to return information for a specified cart.
+     * 
+     * @param  int    $cartId
+     * @return string
+     */
+    public function getByCartId($cartId)
+    {
+        return "/V1/carts/{$cartId}";
+    }
+
+    /**
      * Uri to: Assigns a specified customer to a specified shopping cart.
      * 
      * @param  int    $cartId
@@ -33,6 +44,16 @@ class Carts
     public function post()
     {
         return "/V1/carts/";
+    }
+
+    /**
+     * Uri to: Creates an empty cart and quote for a specified customer.
+     * 
+     * @return string
+     */
+    public function postMine()
+    {
+        return "/V1/carts/mine";
     }
 
     /**
@@ -108,6 +129,17 @@ class Carts
     }
 
     /**
+     * Uri to: Lists items that are assigned to a specified cart.
+     * 
+     * @param  int    $cartId
+     * @return string
+     */
+    public function getItemsByCartId($cartId)
+    {
+        return "/V1/carts/{$cartId}/items";
+    }
+
+    /**
      * Uri to: Adds the specified item to the specified cart.
      * 
      * @param  int    $cartId
@@ -116,6 +148,18 @@ class Carts
     public function postItemsByCartId($cartId)
     {
         return "/V1/carts/{$cartId}/items";
+    }
+
+    /**
+     * Uri to: Adds the specified item to the specified cart.
+     * 
+     * @param  int    $cartId
+     * @param  int    $itemId
+     * @return string
+     */
+    public function putItemsByCartIdAndItemId($cartId, $itemId)
+    {
+        return "/V1/carts/{$cartId}/items/{$itemId}";
     }
 
     /**
@@ -131,6 +175,16 @@ class Carts
     }
 
     /**
+     * Uri to: Lists items that are assigned to a specified cart.
+     * 
+     * @return string
+     */
+    public function getMineItems()
+    {
+        return "/V1/carts/mine/items";
+    }
+
+    /**
      * Uri to: Adds the specified item to the specified cart.
      * 
      * @return string
@@ -138,6 +192,17 @@ class Carts
     public function postMineItems()
     {
         return "/V1/carts/mine/items";
+    }
+
+    /**
+     * Uri to: Adds the specified item to the specified cart.
+     * 
+     * @param  int    $itemId
+     * @return string
+     */
+    public function putMineItemsByItemId($itemId)
+    {
+        return "/V1/carts/mine/items/{$itemId}";
     }
 
     /**
@@ -149,6 +214,17 @@ class Carts
     public function deleteMineItemsByItemId($itemId)
     {
         return "/V1/carts/mine/items/{$itemId}";
+    }
+
+    /**
+     * Uri to: Returns the payment method for a specified shopping cart.
+     * 
+     * @param  int    $cartId
+     * @return string
+     */
+    public function getSelectedPaymentMethodByCartId($cartId)
+    {
+        return "/V1/carts/{$cartId}/selected-payment-method";
     }
 
     /**
@@ -174,6 +250,16 @@ class Carts
     }
 
     /**
+     * Uri to: Returns the payment method for a specified shopping cart.
+     * 
+     * @return string
+     */
+    public function getMineSelectedPaymentMethod()
+    {
+        return "/V1/carts/mine/selected-payment-method";
+    }
+
+    /**
      * Uri to: Adds a specified payment method to a specified shopping cart.
      * 
      * @return string
@@ -194,6 +280,17 @@ class Carts
     }
 
     /**
+     * Uri to: Returns the billing address for a specified quote.
+     * 
+     * @param  int    $cartId
+     * @return string
+     */
+    public function getBillingAddressByCartId($cartId)
+    {
+        return "/V1/carts/{$cartId}/billing-address";
+    }
+
+    /**
      * Uri to: Assigns a specified billing address to a specified cart.
      * 
      * @param  int    $cartId
@@ -205,6 +302,16 @@ class Carts
     }
 
     /**
+     * Uri to: Returns the billing address for a specified quote.
+     * 
+     * @return string
+     */
+    public function getMineBillingAddress()
+    {
+        return "/V1/carts/mine/billing-address";
+    }
+
+    /**
      * Uri to: Assigns a specified billing address to a specified cart.
      * 
      * @return string
@@ -212,6 +319,17 @@ class Carts
     public function postMineBillingAddress()
     {
         return "/V1/carts/mine/billing-address";
+    }
+
+    /**
+     * Uri to: Returns information for a coupon in a specified cart.
+     * 
+     * @param  int    $cartId
+     * @return string
+     */
+    public function getCouponsByCartId($cartId)
+    {
+        return "/V1/carts/{$cartId}/coupons";
     }
 
     /**
@@ -235,6 +353,16 @@ class Carts
     public function putCouponsByCartIdAndCouponCode($cartId, $couponCode)
     {
         return "/V1/carts/{$cartId}/coupons/{$couponCode}";
+    }
+
+    /**
+     * Uri to: Returns information for a coupon in a specified cart.
+     * 
+     * @return string
+     */
+    public function getMineCoupons()
+    {
+        return "/V1/carts/mine/coupons";
     }
 
     /**
@@ -342,6 +470,16 @@ class Carts
     }
 
     /**
+     * Uri to: Set payment information and place order for a specified cart.
+     * 
+     * @return string
+     */
+    public function postMinePaymentInformation()
+    {
+        return "/V1/carts/mine/payment-information";
+    }
+
+    /**
      * Uri to: Get payment information.
      * 
      * @return string
@@ -362,6 +500,17 @@ class Carts
     }
 
     /**
+     * Uri to: Return the gift message for a specified order.
+     * 
+     * @param  int    $cartId
+     * @return string
+     */
+    public function getGiftMessageByCartId($cartId)
+    {
+        return "/V1/carts/{$cartId}/gift-message";
+    }
+
+    /**
      * Uri to: Set the gift message for an entire order.
      * 
      * @param  int    $cartId
@@ -370,6 +519,16 @@ class Carts
     public function postGiftMessageByCartId($cartId)
     {
         return "/V1/carts/{$cartId}/gift-message";
+    }
+
+    /**
+     * Uri to: Return the gift message for a specified order.
+     * 
+     * @return string
+     */
+    public function getMineGiftMessage()
+    {
+        return "/V1/carts/mine/gift-message";
     }
 
     /**
@@ -383,6 +542,18 @@ class Carts
     }
 
     /**
+     * Uri to: Return the gift message for a specified item in a specified shopping cart.
+     * 
+     * @param  int    $cartId
+     * @param  int    $itemId
+     * @return string
+     */
+    public function getGiftMessageByCartIdAndItemId($cartId, $itemId)
+    {
+        return "/V1/carts/{$cartId}/gift-message/{$itemId}";
+    }
+
+    /**
      * Uri to: Set the gift message for a specified item in a specified shopping cart.
      * 
      * @param  int    $cartId
@@ -392,6 +563,17 @@ class Carts
     public function postGiftMessageByCartIdAndItemId($cartId, $itemId)
     {
         return "/V1/carts/{$cartId}/gift-message/{$itemId}";
+    }
+
+    /**
+     * Uri to: Return the gift message for a specified item in a specified shopping cart.
+     * 
+     * @param  int    $itemId
+     * @return string
+     */
+    public function getMineGiftMessageByItemId($itemId)
+    {
+        return "/V1/carts/mine/gift-message/{$itemId}";
     }
 
     /**

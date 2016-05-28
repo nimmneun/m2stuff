@@ -15,6 +15,28 @@ class Eav
     }
 
     /**
+     * Uri to: Retrieve attribute set information based on given ID.
+     * 
+     * @param  int    $attributeSetId
+     * @return string
+     */
+    public function getAttributeSetsByAttributeSetId($attributeSetId)
+    {
+        return "/V1/eav/attribute-sets/{$attributeSetId}";
+    }
+
+    /**
+     * Uri to: Remove attribute set by given ID.
+     * 
+     * @param  int    $attributeSetId
+     * @return string
+     */
+    public function deleteAttributeSetsByAttributeSetId($attributeSetId)
+    {
+        return "/V1/eav/attribute-sets/{$attributeSetId}";
+    }
+
+    /**
      * Uri to: Update attribute set data.
      * 
      * @param  int    $attributeSetId

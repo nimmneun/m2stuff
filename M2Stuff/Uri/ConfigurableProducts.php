@@ -49,6 +49,30 @@ class ConfigurableProducts
     }
 
     /**
+     * Uri to: Get option for configurable product.
+     * 
+     * @param  string $sku
+     * @param  int    $id
+     * @return string
+     */
+    public function getOptionsBySkuAndId($sku, $id)
+    {
+        return "/V1/configurable-products/{$sku}/options/{$id}";
+    }
+
+    /**
+     * Uri to: Update option.
+     * 
+     * @param  string $sku
+     * @param  int    $id
+     * @return string
+     */
+    public function putOptionsBySkuAndId($sku, $id)
+    {
+        return "/V1/configurable-products/{$sku}/options/{$id}";
+    }
+
+    /**
      * Uri to: Remove option from configurable product.
      * 
      * @param  string $sku

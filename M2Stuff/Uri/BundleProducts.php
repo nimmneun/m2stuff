@@ -64,6 +64,18 @@ class BundleProducts
     }
 
     /**
+     * Uri to: Get option for bundle product.
+     * 
+     * @param  string $sku
+     * @param  int    $optionId
+     * @return string
+     */
+    public function getOptionsBySkuAndOptionId($sku, $optionId)
+    {
+        return "/V1/bundle-products/{$sku}/options/{$optionId}";
+    }
+
+    /**
      * Uri to: Remove bundle option.
      * 
      * @param  string $sku

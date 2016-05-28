@@ -81,6 +81,17 @@ class Orders
     }
 
     /**
+     * Uri to: Adds a comment to a specified order.
+     * 
+     * @param  int    $id
+     * @return string
+     */
+    public function postCommentsById($id)
+    {
+        return "/V1/orders/{$id}/comments";
+    }
+
+    /**
      * Uri to: Lists comments for a specified order.
      * 
      * @param  int    $id

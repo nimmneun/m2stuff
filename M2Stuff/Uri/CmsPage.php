@@ -5,6 +5,17 @@ namespace M2Stuff\Uri;
 class CmsPage
 {
     /**
+     * Uri to: Retrieve page.
+     * 
+     * @param  int    $pageId
+     * @return string
+     */
+    public function getByPageId($pageId)
+    {
+        return "/V1/cmsPage/{$pageId}";
+    }
+
+    /**
      * Uri to: Delete page by ID.
      * 
      * @param  int    $pageId

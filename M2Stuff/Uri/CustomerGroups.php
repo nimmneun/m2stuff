@@ -5,6 +5,28 @@ namespace M2Stuff\Uri;
 class CustomerGroups
 {
     /**
+     * Uri to: Get customer group by group ID.
+     * 
+     * @param  int    $id
+     * @return string
+     */
+    public function getById($id)
+    {
+        return "/V1/customerGroups/{$id}";
+    }
+
+    /**
+     * Uri to: Update customer group.
+     * 
+     * @param  int    $id
+     * @return string
+     */
+    public function putById($id)
+    {
+        return "/V1/customerGroups/{$id}";
+    }
+
+    /**
      * Uri to: Delete customer group by ID.
      * 
      * @param  int    $id
